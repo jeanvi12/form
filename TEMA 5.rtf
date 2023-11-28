@@ -1,0 +1,498 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1046{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset128 CIDFont+F1;}{\f2\fnil Calibri;}}
+{\colortbl ;\red255\green255\blue0;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sl240\slmult1\qj\b\f0\fs32\lang22 Tema 5: Formul\'e1rio\par
+\b0\fs24 O que s\'e3o Formul\'e1rios?\par
+\par
+\fs22 Os formul\'e1rios em html s\'e3o usados como uma das principais ferramentas de \ul interatividade entre os usu\'e1rios e um site ou aplicativo\ulnone . Atrav\'e9s deles que os usu\'e1rios enviam dados para o site, sendo que na maior parte do tempo \ul esses dados s\'e3o enviados para um servidor web, por\'e9m a p\'e1gina web pode requisitar para us\'e1-los em qualquer momento\ulnone . Em geral quando necessitamos que o usu\'e1rio forne\'e7a algum tipo de informa\'e7\'e3o, \'e9 pelo formul\'e1rio que fazemos esse pedido, que por sua vez envia os dados para um banco de dados, para o armazenamento ou utiliza\'e7\'e3o em outra p\'e1gina. Existem in\'fameras finalidades na qual podemos usar os formul\'e1rios, vamos conhecer as principais tags e aprender a utilizar o formul\'e1rio em html.\par
+A principal diferen\'e7a entre um \highlight1\ul formul\'e1rio html e um documento simples html \'e9 que na maioria das vezes, o dado coletado \'e9 enviado ao servidor\highlight0\ulnone . Nesse caso, \'e9 necess\'e1rio ter um \ul servidor web configurado\ulnone  para receber e processar os dados, vamos aprender a configurar um servidor web mais adiante, nesse cap\'edtulo vamos nos atentar para o formul\'e1rio e seus atributos. Os formul\'e1rios necessitam de valida\'e7\'f5es em seus campos, \'e9 at\'e9 poss\'edvel fazer essas valida\'e7\'f5es em html, \ul mas no html 5, \'e9 indicado fazer as valida\'e7\'f5es no c\'f3digo JavaScript incorporado no formul\'e1rio\ulnone .\par
+Antes de codificar um formul\'e1rio, \'e9 de grande ajuda ter ele \b desenhado em algum arquivo\b0 , ou at\'e9 mesmo numa folha de papel, para facilitar na hora de codificar e n\'e3o esquecer nenhum campo importante.\par
+\par
+\b\fs24 Criando um Formul\'e1rio\par
+\par
+\b0\fs22 Todo formul\'e1rio em html deve come\'e7ar \b pela tag <form> e terminar fechando-a </form>\b0 , esse elemento n\'e3o \'e9 visual (quando colocamos somente a tag <form> na p\'e1gina, ao executar no navegador n\'e3o nos mostra nada, \'e9 apenas para indicar que naquele local determinado tem um formul\'e1rio), ela precisa de outros elementos para que o formul\'e1rio ganhe vida. Vamos conhecer as tags do formul\'e1rio e seus atributos.\par
+Dentro da tag <form> deve ser configurado alguns atributos para indicar qual a finalidade daquele formul\'e1rio, podemos identificar um formul\'e1rio atrav\'e9s do \b atributo id=\f1\rdblquote\f0 nome_do_formul\'e1rio\f1\rdblquote\b0\f0 , em casos em que temos mais que um formul\'e1rio na p\'e1gina , tamb\'e9m temos o atributo \highlight1\b method (m\'e9todo) que define o m\'e9todo HTTP para o envio de dados, ele pode ser method=\f1\rdblquote\f0 get\f1\rdblquote\f0  ou method=\f1\rdblquote\f0 post\f1\rdblquote\highlight0\b0\f0 . Vamos ver as diferen\'e7as de cada um:\par
+\par
+\b GET = \b0 Os dados ser\'e3o enviados junto com a URL, e desta forma, \highlight1\b ser\'e3o vis\'edveis para os usu\'e1rios,\highlight0\b0  que podem fazer altera\'e7\'f5es, onde pode gerar alguns problemas e incidentes quanto a seguran\'e7a dos dados.\par
+\par
+\b POST = \b0 Os dados ser\'e3o \highlight1\ul enviados no corpo da mensagem HTTP, sendo assim ser\'e3o invis\'edveis\par
+para os usu\'e1rios, o m\'e9todo mais indicado para envio de dados\highlight0\ulnone .\par
+Outro atributo da tag <form> \'e9 o \ul autocomplete, este atributo permite desabilitar(off) o comportamento padr\'e3o da maioria dos navegadores modernos, os quais sugerem valores para os campos baseados em preenchimentos anteriores, ou seja, esse atributo desabilita o autocompletar dos campos de dados pelos navegadores, mas sempre que se achar necess\'e1rio ser habilitado pode ser colocado o valor (on)\ulnone .\par
+Os formul\'e1rios em html possui alguns elementos essenciais para seu bom funcionamento, vamos conhecer alguns deles para compreender melhor o uso dos formul\'e1rios;\par
+\par
+\b INPUT \f2\endash\f0  \b0 Com a nova vers\'e3o do HTML (5.0), esse elemento ganhou novos types (tipos), onde\par
+possibilita atribuir mais controles, por\'e9m ainda temos alguns navegadores que n\'e3o reconhecem esses novos types, adotando assim ao valor padr\'e3o \b <input type=\f1\rdblquote\f0 text\f1\rdblquote\f0 >\b0 . O elemento input \'e9 um elemento que \ul permite a entrada de v\'e1rios tipos de dados\ulnone , seu comportamento \'e9 definido pelo atributo type, dentre os tipos de entrada de dados usados pela tag <input>, podemos destacar alguns:\par
+\par
+\b TEXT \f2\endash\f0  \b0 Esse atributo permite a entrada de textos curtos, com limita\'e7\'e3o de uma linha, n\'e3o\par
+apresenta restri\'e7\'f5es quanto ao conte\'fado utilizado, e n\'e3o possui valida\'e7\'e3o. Al\'e9m desse atributo, \highlight1\ul\b o ideal\highlight0\ulnone\b0  \'e9 que usamos o \ul atributo id, que \'e9 usado para estilizar o elemento utilizando o CSS, e o atributo name, que serve para determinar o nome do campo, assim podendo ser identificado quando for enviado para o servidor na forma de uma vari\'e1vel, que por sua vez ter\'e1 o valor igual ao conte\'fado do atributo value\ulnone .\par
+\par
+\b LABEL \f2\endash\f0  \b0 Faz a \ul defini\'e7\'e3o de um r\'f3tulo\ulnone  para melhorar o controle de campos.\par
+\par
+\b LEGEND \f2\endash\f0  \b0 Define um t\'edtulo para um conjunto de campos.\par
+\par
+Exemplo de c\'f3digo:\par
+\par
+<form>\par
+\tab Nome <input type="text" name="nome" id="txtNome">\par
+\tab Sobrenome <input type="text" name="sobrenome" id="txtSobrenome">\par
+</form>\par
+\par
+\b CHECKBOX \f2\endash\f0  \b0 Usado juntamente com a tag input, esse atributo cria uma variada \ul cadeia de op\'e7\'f5es selecion\'e1veis\ulnone , que podem ser escolhidas pelo usu\'e1rio, permitindo tamb\'e9m a sele\'e7\'e3o de mais de uma op\'e7\'e3o.\par
+\par
+<html>\par
+\par
+<head>\par
+    <title> Formul\'e1rios </title>\par
+</head>\par
+\par
+<body>\par
+    <h1> Formul\'e1rio </h1>\par
+    <form>\par
+        Selecione um ou v\'e1rios g\'eaneros:\par
+        <input type="checkbox" name="generoFilme" value="1"> A\'e7\'e3o\par
+        <input type="checkbox" name="generoFilme" value="2"> Aventura\par
+        <input type="checkbox" name="generoFilme" value="3"> Com\'e9dia\par
+        <input type="checkbox" name="generoFilme" value="4"> Fantasia\par
+        <input type="checkbox" name="generoFilme" value="5"> Fic\'e7\'e3o\par
+        <input type="checkbox" name="generoFilme" value="6"> Terror\par
+    </form>\par
+</body>\par
+\par
+</html>\par
+\par
+Podemos observar que \ul todos os elementos possuem o mesmo valor no atributo \ldblquote name\rdblquote , neste caso \ldblquote generoFilme\rdblquote , mas cada um est\'e1 associado um valor diferente no atributo value\ulnone .\par
+\par
+\b RADIO \f2\endash\b0\f0  Esse atributo \'e9 semelhante ao anterior criando uma lista de op\'e7\'f5es, por\'e9m \ul permitindo somente uma op\'e7\'e3o para ser selecionada\ulnone .\par
+\par
+<html>\par
+\par
+<head>\par
+    <title> Formul\'e1rios </title>\par
+</head>\par
+\par
+<body>\par
+    <h1> Input Radio </h1>\par
+    <form>\par
+        Selecione uma Regi\'e3o:\par
+        <input type="radio" name="regiao" value="sul"> Sul\par
+        <input type="radio" name="regiao" value="sudeste"> Sudeste\par
+        <input type="radio" name="regiao" value="norte"> Norte\par
+        <input type="radio" name="regiao" value="nordeste"> Nordeste\par
+        <input type="radio" name="regiao" value="centroeste"> Centro Oeste\par
+    </form>\par
+</body>\par
+\par
+</html>\par
+\par
+Neste caso \'e9 importante lembrar que \ul todos os elementos radio, que est\'e3o relacionados devem possuir o mesmo name\ulnone . \par
+\b\par
+PASSWORD \f2\endash\f0  \b0 Esse atributo \'e9 muito utilizado para criar campos de entrada de senhas, protegendo os elementos visualmente, substituindo por um car\'e1cter \highlight1\b padr\'e3o o \f1\ldblquote\f0  * \f1\rdblquote\highlight0\b0\f0 . Dificultando os curiosos. Exemplo de c\'f3digo:\par
+\par
+<!DOCTYPE html>\par
+<html>\par
+\par
+<head>\par
+    <title>Formul\'e1rios</title>\par
+</head>\par
+\par
+<body>\par
+    <h1>Input password</h1>\par
+    <form>\par
+        Senha: <input type="password" name="senha"> <br /><br />\par
+        Confirma\'e7\'e3o: <input type="password" name="confirmacao">\par
+    </form>\par
+</body>\par
+\par
+</html>\par
+\par
+\b DATE \f2\endash\f0  \b0 Esse de tipo de atributo \ul aceita apenas datas\ulnone . Em alguns navegadores quando este campo \'e9 utilizado ele apresenta um calend\'e1rio no qual podemos escolher uma data espec\'edfica, em outros casos ele apresenta apenas uma m\'e1scara mostrando um formato que a informa\'e7\'e3o ser\'e1 mostrada.\par
+\par
+<!DOCTYPE html>\par
+<html>\par
+\par
+<head>\par
+    <title>Formul\'e1rios</title>\par
+</head>\par
+\par
+<body>\par
+    <h1>Input Date</h1>\par
+    <form>\par
+        Data de Nascimento: <input type="date" name="nascimento" min="1950-01-01" max="2020-12-31">\par
+    </form>\par
+</body>\par
+\par
+</html>\par
+\par
+Podemos determinar um intervalo de datas v\'e1lidas, com os \ul atributos \ldblquote min\rdblquote  e \ldblquote max\rdblquote , sempre usadas no formato de datas norte americano ano-m\'eas-dia\ulnone , onde o ano deve conter 4 d\'edgitos.\par
+\par
+\b COLOR \f2\endash\f0  \b0 Este atributo fornece ao usu\'e1rio um elemento que permite selecionar uma cor, dependendo do navegador este elemento \'e9 apresentado de formas diferentes. Em geral o valor retornado est\'e1 no formato hexadecimal (#AABBCC).\par
+\par
+<!DOCTYPE html>\par
+<html>\par
+\par
+<head>\par
+    <title>Formul\'e1rios</title>\par
+</head>\par
+\par
+<body>\par
+    <h1>Input Color</h1>\par
+    <form>\par
+        Selecione uma cor: <input type="color" name="cor" value="#000000">\par
+    </form>\par
+</body>\par
+\par
+</html>\par
+\par
+\b EMAIL \f2\endash\f0  \b0 Este atributo permite uma \ul verifica\'e7\'e3o do conte\'fado do campo para garantir que o formato digitado seja um email v\'e1lido\ulnone , pode ser enviado em branco, salvo com o uso do atributo required. Em casos que o atributo multiple esteja presente, \'e9 poss\'edvel submeter mais de um endere\'e7o de email v\'e1lido, para isso devemos separar cada email com uma v\'edrgula ( , ). Exemplo do c\'f3digo:\par
+\par
+<!DOCTYPE html>\par
+<html>\par
+\par
+<head>\par
+    <title>Formul\'e1rios</title>\par
+</head>\par
+\par
+<body>\par
+    <h1>Input E-mail</h1>\par
+    <form>\par
+        E-mail: <input type="email" name="email" required multiple>\par
+        <input type="submit" value="Enviar">\par
+    </form>\par
+</body>\par
+\par
+</html>\par
+\par
+\b NUMBER \f2\endash\f0  \b0 Permite a entrada \ul de dados num\'e9ricos permitindo definir atrav\'e9s dos atributos \ldblquote min\rdblquote  para o valor m\'ednimo e \ldblquote max\rdblquote  para o valor m\'e1ximo\ulnone . Outro atributo que \'e9 usado \'e9 \highlight1\ul o \ldblquote step\rdblquote  \highlight0\ulnone que define o valor do incremento e decremento do campo.\par
+Exemplo de c\'f3digo:\par
+\par
+<!DOCTYPE html>\par
+<html>\par
+\par
+<head>\par
+    <title>Formul\'e1rios</title>\par
+</head>\par
+\par
+<body>\par
+    <h1>Input Number</h1>\par
+    <form>\par
+        Ano de Nascimento: <input type="number" name="anoNascimento" min="1910" max="2018" step="1" required>\par
+    </form>\par
+</body>\par
+\par
+</html>\par
+\par
+\b RANGE \f2\endash\f0  \b0 Este atributo em geral \ul apresenta uma barra horizontal\ulnone , cujo valores s\'e3o limitados \ul pelos atributos \ldblquote min\rdblquote  e \ldblquote max\rdblquote , outro atributo usado \'e9 o \ldblquote step\rdblquote\ulnone . Exemplo do c\'f3digo:\par
+\par
+<!DOCTYPE html>\par
+<html>\par
+\par
+<head>\par
+    <title>Formul\'e1rios</title>\par
+</head>\par
+\par
+<body>\par
+    <h1>Input Range</h1>\par
+    <form>\par
+        Barra de Range: <input type="range" name="barra" min="0" max="5000" step="100" required>\par
+    </form>\par
+</body>\par
+\par
+</html>\par
+\par
+\b TIME \f2\endash\f0  \b0 Este atributo permite ao usu\'e1rio \highlight1 colocar um hor\'e1rio no formato de 12 ou 24 horas, com o formato hh:mm, em casos de 12 horas com a sigla AM/PM, e em casos 24 horas hh:mm:ss, isso dependendo do navegador\highlight0 . Exemplo do c\'f3digo:\par
+\par
+<!DOCTYPE html>\par
+<html>\par
+\par
+<head>\par
+    <title>Formul\'e1rios</title>\par
+</head>\par
+\par
+<body>\par
+    <h1>Input Time</h1>\par
+    <form>\par
+        Selecione o hor\'e1rio da Consulta: <input type="time" name="horaConsulta" required>\par
+    </form>\par
+</body>\par
+\par
+</html>\par
+\par
+
+\pard\b URL \f2\endash\f0  \b0 Este atributo \'e9 usado quando precisamos de uma valida\'e7\'e3o do campo para verificar \ul uma url v\'e1lida digitada pelo usu\'e1rio\ulnone . Exemplo do c\'f3digo:\par
+\par
+<!DOCTYPE html>\par
+<html>\par
+\par
+<head>\par
+    <title>Formul\'e1rios</title>\par
+</head>\par
+\par
+<body>\par
+    <h1>Input URL</h1>\par
+    <form>\par
+        Informe o endere\'e7o do site: <input type="url" name="enderecoSite" required>\par
+        <input type="submit" value="Enviar">\par
+    </form>\par
+</body>\par
+\par
+</html>\par
+\par
+\b\fs24 HTML5 \f2\endash\f0  Novas TAGS\par
+\par
+
+\pard\sl240\slmult1\qj\b0\fs22 Esses atributos do <input> apresentados at\'e9 aqui s\'e3o atributos que fazem parte do html j\'e1 algum tempo, com a chegada da vers\'e3o 5.0 do html, veio tamb\'e9m alguns novos atributos que ajudam a interatividade com o usu\'e1rio e a praticidade na implementa\'e7\'e3o, vamos conhecer os principais.\par
+\par
+\b PLACEHOLDER\b0  \f2\endash\f0  Este atributo \ul mostra uma \ldblquote dica\rdblquote  de como o campo dever ser preenchido\ulnone , na vers\'e3o anterior s\'f3 era poss\'edvel com aux\'edlio de scripts (JavaScript ou jQuery). Essa \ldblquote dica\rdblquote  aparece no campo at\'e9 que o usu\'e1rio come\'e7a a digitar algo. As informa\'e7\'f5es do placeholder ficam vis\'edveis somente enquanto o campo est\'e1 vazio, e n\'e3o influencia no valor do campo em si. Exemplo de c\'f3digo:\par
+\par
+<!DOCTYPE html>\par
+<html>\par
+\par
+<head>\par
+    <title>Formul\'e1rios</title>\par
+</head>\par
+\par
+<body>\par
+    <h1>Inputs HTML5</h1>\par
+    <form>\par
+        <b>Nome Completo:</b>\par
+        <input type="text" name="nome" placeholder="Digite seu nome">\par
+        <br><br>\par
+\par
+        <b>Data de nascimento:</b>\par
+        <input type="date" name="nasc" placeholder="dd/mm/aa">\par
+        <br><br>\par
+\par
+        <b>N\'famero de telefone:</b>\par
+        <input type="tel" name="tel" placeholder="(DDD)#####-####">\par
+    </form>\par
+</body>\par
+\par
+</html>\par
+\par
+\b REQUIRED \f2\endash\f0  \b0 Este atributo quando presente auxilia na valida\'e7\'e3o do campo, \ul o formul\'e1rio n\'e3o ser\'e1 \ldblquote submetido/enviado\rdblquote  caso o campo esteja vazio\ulnone . Veja o exemplo do c\'f3digo e navegador:\par
+\par
+<!DOCTYPE html>\par
+<html>\par
+\par
+<head>\par
+    <title>Formul\'e1rios</title>\par
+</head>\par
+\par
+<body>\par
+    <h1>Inputs HTML5</h1>\par
+    <form>\par
+        <b>CPF : </b>\par
+        <input type="number" name="campo" required>\par
+        <input type="submit" value="Enviar">\par
+    </form>\par
+</body>\par
+\par
+</html>\par
+\par
+\b AUTOFOCUS \f2\endash\f0  \b0 Esse atributo \ul\'e9 poss\'edvel implement\'e1-lo somente em um campo do formul\'e1rio\ulnone , pois sempre que o navegador carregar a p\'e1gina onde est\'e1 o formul\'e1rio o campo ter\'e1 o foco, sendo assim o cursor aparecer\'e1 nesse campo predefinidamente. Este atributo garante que ao carregar a p\'e1gina do formul\'e1rio, sempre seremos direcionados para o mesmo campo. Exemplo do c\'f3digo:\par
+\par
+<!DOCTYPE html>\par
+<html>\par
+\par
+<head>\par
+    <title>Formul\'e1rios</title>\par
+</head>\par
+\par
+<body>\par
+    <h1>Inputs HTML5</h1>\par
+    <form action="{{\field{\*\fldinst{HYPERLINK http://www.google.com.br }}{\fldrslt{http://www.google.com.br\ul0\cf0}}}}\f0\fs22 ">\par
+        <input type="number" name="numero" required autofocus>\par
+        <input type="submit" value="Enviar"><br><br>\par
+        <input type="text" name="nome" placeholder="Digite seu Nome">\par
+    </form>\par
+</body>\par
+\par
+</html>\par
+\par
+Devemos colocar o \ul atributo no campo que ter\'e1 o foco toda vez que a p\'e1gina ser\'e1 carregada\ulnone ,\par
+pode-se colocar em qualquer campo em espec\'edfico, s\'f3 devemos lembrar que esse atributo pode ser usado somente em um campo do formul\'e1rio.\par
+\par
+\b MAXLENGTH \f2\endash\f0  \b0 Esse atributo permite a \ul limita\'e7\'e3o da quantidade m\'e1xima de caracteres\ulnone  que podem ser inseridos na tag <input>, ideal para limitar campos com o type=\rdblquote text\rdblquote . Vamos ver o c\'f3digo como exemplo.\par
+\par
+<!DOCTYPE html>\par
+<html>\par
+\par
+<head>\par
+    <title>Formul\'e1rios</title>\par
+</head>\par
+\par
+<body>\par
+    <h1>Inputs HTML5</h1>\par
+    <form action="#" method="post">\par
+        <h2>Digite seu Primeiro Nome (limite de 20 caracteres)</h2>\par
+        <input type="text" name="primeiroNome" maxlength="20" required>\par
+        <input type="submit" value="Enviar">\par
+    </form>\par
+</body>\par
+\par
+</html>\par
+\par
+\b AUTOCOMPLETE - \b0 Em geral por padr\'e3o, os navegadores oferecem a fun\'e7\'e3o de  autocomplete em formul\'e1rios, por\'e9m \highlight1 em alguns momentos seja necess\'e1rio desabilitar esta fun\'e7\'e3o\highlight0 , por exemplo, quando precisamos confirmar o endere\'e7o de um e-mail, login ou senha. Exemplo do c\'f3digo:\par
+\par
+<!DOCTYPE html>\par
+<html>\par
+\par
+<head>\par
+    <title>Formul\'e1rios</title>\par
+</head>\par
+\par
+<body>\par
+    <h1>Inputs HTML5</h1>\par
+    <form action="#" method="post">\par
+        <h3>Digite seu email:</h3>\par
+        <input type="email" name="email" required>\par
+        <h3>Confirme seu email:</h3>\par
+        <input type="email" name="confirmacaoEmail" required \b autocomplete="off\b0 ">\par
+        <input type="submit" value="Enviar">\par
+    </form>\par
+</body>\par
+\par
+</html>\par
+\par
+\b SELECT \f2\endash\f0  \b0 Essa tag utilizamos quando desejamos criar uma \highlight1 estrutura no modelo \ldblquote drop-down\rdblquote , que mostrar para o usu\'e1rio uma s\'e9rie de op\'e7\'f5es selecion\'e1veis\highlight0 . Dependendo dos par\'e2metros implantados no c\'f3digo, os usu\'e1rios poder\'e3o selecionar uma ou mais op\'e7\'f5es. Exemplo do c\'f3digo:\par
+\par
+<!DOCTYPE html>\par
+<html>\par
+\par
+<head>\par
+    <title>Formul\'e1rios</title>\par
+</head>\par
+\par
+<body>\par
+    <h1>Tag Select</h1>\par
+    <form>\par
+        Selecione o Estado:\par
+        <select name="estado">\par
+            <option value="DF">Bras\'edlia</option>\par
+            <option value="RJ">Rio de Janeiro</option>\par
+            <option value="SP">S\'e3o Paulo</option>\par
+        </select>\par
+    </form>\par
+</body>\par
+\par
+</html>\par
+\par
+Podemos notar que o modo no qual escrevemos essa tag \'e9 diferente, sendo aberto a tag com <select> e ap\'f3s seu t\'e9rmino fechando \f2\endash\f0  a com </select>, onde todas as op\'e7\'f5es s\'e3o usadas com ao atributo <option> ... </option>.\par
+\par
+\b TEXTAREA \f2\endash\f0  \highlight1\b0 Diferente da tag <input>\highlight0 , que permite o usu\'e1rio fornece apenas uma linha de dados, esta tag permite que seja fornecido uma quantidade de informa\'e7\'f5es muito superior. \ul Permitindo a inser\'e7\'e3o de texto de m\'faltiplas linhas\ulnone , sendo muito \'fatil para armazenar mensagens mais longas ou trechos de textos.\par
+Pode ser inserido 2 atributos para determinar o n\'famero m\'e1ximo de linhas e colunas dentro da \'e1rea de texto, o atributo rows \'e9 usado para limitar o n\'famero de linhas, e o atributo cols a quantidade de colunas. Exemplo do c\'f3digo:\par
+\par
+<!DOCTYPE html>\par
+<html>\par
+\par
+<head>\par
+    <title>Formul\'e1rios</title>\par
+</head>\par
+\par
+<body>\par
+    <h1>Tag TextArea</h1>\par
+    <form>\par
+        <h3>Deixe sua mensagem aqui:</h3>\par
+        <textarea rows="5" name="mensagem"></textarea>\par
+    </form>\par
+</body>\par
+\par
+</html>\par
+\par
+\b BUTTON \f2\endash\f0  \b0\'c9 \highlight1 poss\'edvel adicionar bot\'f5es aos formul\'e1rios de duas maneiras, primeiro \'e9 usando a tag <input> e segundo \'e9 usando a tag <button>\highlight0 . Os bot\'f5es no formul\'e1rio s\'e3o de extrema import\'e2ncia, pois s\'e3o atrav\'e9s deles que a maioria das intera\'e7\'f5es s\'e3o acionadas. Uma das principais fun\'e7\'f5es \'e9 invocar o m\'e9todo que realiza o envio/submiss\'e3o dos dados do formul\'e1rio para um servidor ou p\'e1gina em PHP.\par
+Essa tag tem o modo de utiliza\'e7\'e3o sendo aberta com <button> e fechada com </button>. Vamos ver um exemplo do c\'f3digo:\par
+\par
+\lang1046 <!DOCTYPE html>\par
+<html>\par
+\par
+<head>\par
+    <title>Formul\'e1rios</title>\par
+</head>\par
+\par
+<body>\par
+    <h1>Tag Button</h1>\par
+    <form action="seu_script_php.php" method="post">\par
+        <button type="submit">Enviar</button>\par
+    </form>\par
+</body>\par
+\par
+</html>\par
+\par
+Assim como a tag <input>, a tag <button> possui uma s\'e9rie de atributos importantes para diversas utiliza\'e7\'f5es. \'c9 importante conhecermos os mais usados para deixar nossos formul\'e1rios mais funcionais e pr\'e1ticos. Vamos conhecer os principais atributos da tag <button>:\par
+\par
+\b TYPE \f2\endash\f0  \b0 Determina o tipo do bot\'e3o, ele aceita alguns valores como; (button), para bot\'e3o no formato padr\'e3o, (reset), para um bot\'e3o com a finalidade de resetar os campos preenchidos para um valor padr\'e3o, e (submit), para criar um bot\'e3o com a fun\'e7\'e3o de enviar os dados do formul\'e1rio.\par
+\par
+\b NAME \f2\endash\f0  \b0\'c9 usado para nomear o bot\'e3o.\par
+\par
+\b VALUE \f2\endash\f0  \b0 Usamos o value para definir o nome/valor que aparece no bot\'e3o.\par
+\par
+\b FORMACTION -\b0  Define a URL onde os dados submetidos ser\'e3o processados.\par
+\par
+\b AUTOFOCUS \f2\endash\f0  \b0 Determina que o bot\'e3o deve receber o foco sempre quando a p\'e1gina for carregada.\par
+\par
+\b DISABLED \f2\endash\f0  \b0 Faz com que o bot\'e3o seja desabilitado e n\'e3o responda aos eventos, como por exemplo ao click ou passar do mouse.\par
+\par
+\b FORMMETHOD \f2\endash\f0  \b0 Espec\'edfica como ser\'e1 realizada a submiss\'e3o do formul\'e1rio, seja no m\'e9todo GET ou POST.\par
+\par
+\b FORMNOVALIDATE \f2\endash\f0  \b0 Determina que o formul\'e1rio seja submetido/enviado sem ser validado, esse atributo s\'f3 deve ser usado nos bot\'f5es tipo submit.\par
+\par
+\b\fs24 OBJETOS E IFRAMES\b0\par
+\fs22 Novas tags adicionadas como a <object> e a <iframe> vieram para ajudar na implementa\'e7\'e3o e uso do html, e deixar mais leves a pr\'e1tica de adicionar objetos multimidia na p\'e1gina, vamos conhecer essas tags com mais detalhes:\par
+\par
+\b <object> ... </object> \b0 - Esta tag \'e9 utilizada para incorporar tipos de m\'eddias adicionais \'e0 p\'e1gina.\par
+Podendo ser \'e1udio, video, documento em pdf, entre outros. Com alguns atributos importantes para a utiliza\'e7\'e3o como width (largura) e height (altura) para ajustar as dimens\'f5es onde o objeto ser\'e1 adicionado e o type que determina o tipo do conte\'fado exibido.\par
+\par
+\b <iframe> ... </iframe> - \b0 Essa tag \'e9 uma esp\'e9cie de bloco de conte\'fado em linha, que \'e9 utilizado como um cont\'eainer flex\'edvel para arquivos de m\'eddia. Ele tem a posi\'e7\'e3o flutuante dentro da p\'e1gina, significando que \'e9 colocado relativo \'e0 outros itens da p\'e1gina. Conhe\'e7a alguns atributos da tag iframe.\par
+\par
+\b NAME \b0\f2\endash\f0  Determina o nome do frame.\par
+\par
+\b SRC \f2\endash\f0  \b0 A fonte URL/caminho do objeto multimidia para ser inserido dento do iframe.\par
+\par
+\b SRCDOC \f2\endash\f0  \b0 Insere um conte\'fado HTML para ser mostrado dentro do iframe.\par
+\par
+\b WIDTH \f2\endash\f0  \b0 Determina a largura do iframe.\par
+\par
+\b HEIGHT \f2\endash\f0  \b0 Determina a altura do iframe.\par
+\par
+\b <PARAM/> - \b0 Serve para customizar o iframe. Incluindo par\'e2metros adicionais para ir junto com o conte\'fado.\par
+\par
+\b <embed> ... </embed> -\b0  \'c9 usado para incorporar na p\'e1gina objetos externos, como plugins (flash player entre outros).\par
+\par
+
+\pard\qj\b\fs24 RESPONDA:\b0\par
+\fs22 1) O que \'e9 um formul\'e1rio HTML?\par
+2) Qual a principal diferen\'e7a entre um formul\'e1rio em HTML e um documento simples HTML?\par
+3) Para a tag <form> podem ser atribu\'eddos o atributo ___________ (atributo onde define o local\par
+atrav\'e9s da url) e o _______________ (atributo que define o m\'e9todo HTTP).\par
+4) Qual a diferen\'e7a entre os m\'e9todos de um formul\'e1rio HTML?\par
+5) Qual a tag usada para usada para adicionar uma \'e1rea de texto no formul\'e1rio?\par
+6) Para inserir um bot\'e3o no formul\'e1rio eu uso a tag ___________ ou a tag __________.\par
+7) A tag <input type=\rquote date\rquote > me retorna qual valor?\par
+8) Qual a fun\'e7\'e3o da tag <map> no c\'f3digo em HTML.\par
+9) Qual tag utilizo para inserir um campo de texto?\par
+
+\pard\sl240\slmult1\qj 10) Qual o uso da tag <label>?\par
+-------------------------------------------------------------------------------------------------------------------\par
+1-Um formul\'e1rio HTML \'e9 uma ferramenta de interatividade entre usu\'e1rios e um site ou aplicativo. Ele permite que os usu\'e1rios forne\'e7am dados, que s\'e3o enviados para um servidor web para processamento ou armazenamento.\par
+\par
+2-A principal diferen\'e7a \'e9 que, na maioria das vezes, os dados coletados por um formul\'e1rio HTML s\'e3o enviados ao servidor. Isso requer um servidor web configurado para receber e processar os dados.\par
+\par
+3-Os atributos para a tag <form> incluem o atributo action (atributo onde define o local atrav\'e9s da URL) e o atributo method (atributo que define o m\'e9todo HTTP).\par
+\par
+4-A diferen\'e7a entre os m\'e9todos de um formul\'e1rio HTML est\'e1 no modo como os dados s\'e3o enviados:\par
+\par
+5-GET: Os dados s\'e3o enviados junto com a URL, vis\'edveis para os usu\'e1rios.\par
+POST: Os dados s\'e3o enviados no corpo da mensagem HTTP, invis\'edveis para os usu\'e1rios.\par
+A tag usada para adicionar uma \'e1rea de texto no formul\'e1rio \'e9 <textarea>.\par
+\par
+6-Para inserir um bot\'e3o no formul\'e1rio, voc\'ea pode usar a tag <input> com o atributo type="submit" para um bot\'e3o de envio. Ou, alternativamente, pode usar a tag <button>.\par
+\par
+7-A tag <input type='date'> retorna uma data que pode ser selecionada pelo usu\'e1rio.\par
+\par
+8-A tag <map> em HTML \'e9 usada junto com as tags <area> para criar mapas de imagem interativos.\par
+\par
+9-A tag utilizada para inserir um campo de texto \'e9 <input> com o atributo type="text".\par
+\par
+10-A tag <label> \'e9 usada para definir um r\'f3tulo associado a um campo de formul\'e1rio, melhorando a acessibilidade e usabilidade.\lang22\par
+}
+ 
